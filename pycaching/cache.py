@@ -1105,6 +1105,11 @@ class Cache(object):
 
                 img_filename = log_data["LogTypeImage"].rsplit(".", 1)[0]  # filename w/o extension
 
+                # get log image[0] filename
+                log_image_filename = None
+                if len(log_data["Images"]) > 0:
+                  log_image_filename = log_data["Images"][0]["FileName"]
+ 
                 # create and fill log object
                 yield Log(
                     uuid=log_data["LogGuid"],
@@ -1112,6 +1117,8 @@ class Cache(object):
                     text=log_data["LogText"],
                     visited=log_data["Visited"],
                     author=log_data["UserName"],
+                    membership=log_data["MembershipLevel"],
+                    log_image=log_image_filename,
                 )
 
     # TODO: trackable list can have multiple pages - handle it in similar way as _logbook_get_page

@@ -1,4 +1,6 @@
 # CUSTOM ===========================================================
+.gc_credentials
+*_logs.json
 
 # tmp file for testing some snippets of code
 test.py

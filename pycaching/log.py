@@ -13,7 +13,7 @@ _type = type
 class Log(object):
     """Represents a log record with its properties."""
 
-    def __init__(self, *, uuid=None, type=None, text=None, visited=None, author=None):
+    def __init__(self, *, uuid=None, type=None, text=None, visited=None, author=None, membership=None, log_image=None):
         if uuid is not None:
             self.uuid = uuid
         if type is not None:
@@ -24,6 +24,10 @@ class Log(object):
             self.visited = visited
         if author is not None:
             self.author = author
+        if membership is not None:
+            self.membership = membership
+        if log_image is not None:
+            self.log_image = log_image
 
     def __str__(self):
         """Return log text."""
